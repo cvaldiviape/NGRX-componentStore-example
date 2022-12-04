@@ -1,0 +1,49 @@
+Lista de peliculas
+
+<li *ngFor="let movie of (movies$ | async)">
+  {{ movie.name }}
+</li>
+
+<br/>
+<br/>
+<br/>
+
+ID de pelicula seleccionada
+<p>{{selectedMovieId$ | async}}</p>
+
+<button (click)="add('Fast Furious')">Add a Movie</button>
+<br/>
+<br/>
+
+<button (click)="resetMovies()">Reset STORE</button>
+<br/>
+<br/>
+
+<button (click)="getFullDataMovieCurrentSelected()">View Full Data Movie Current Selected</button>
+<br/>
+<br/>
+
+<button (click)="viewQuantityMovies()">View Quantity</button>
+<br/>
+<br/>
+
+
+Mi Libro
+<div *ngIf="book$ | async as bookx">
+  {{bookx.id}} - {{bookx.name}}
+</div>
+<br>
+<br>
+
+<!-- <div>{{book.id}} - {{book.name}}</div>
+<br>
+<br> -->
+
+
+<button (click)="updateBook({name: 'new name book', id: 84})">Update Book</button>
+<br/>
+<br/>
+
+<button (click)="updateNameBook('new name fx')">Update name Book</button>
+<br/>
+<br/>
