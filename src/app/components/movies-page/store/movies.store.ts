@@ -43,10 +43,11 @@ export class MoviesStore extends ComponentStore<MoviesState> {
 
   // TODO - crenado mi reducer, recibe como argumento el "state actual", y el "payload.state", para finalmente retornar un "nuevo state".
   readonly addMovie = this.updater((state: MoviesState, movie: Movie) => ({ // TODO: NOTA: cuando uso "updated()" me coondiciona a actualizar todo el "STATE".
+    ...state,
     movies: [...state.movies, movie],
-    selectedMovieId: state.selectedMovieId,
-    userPreferredMoviesIds: [...state.userPreferredMoviesIds],
-    book: state.book
+    // selectedMovieId: state.selectedMovieId,
+    // userPreferredMoviesIds: [...state.userPreferredMoviesIds],
+    // book: state.book
   }))
 
   readonly addBook = this.updater((state: MoviesState, book: Book) => ({
